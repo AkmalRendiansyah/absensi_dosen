@@ -7,47 +7,38 @@ A comprehensive lecturer attendance management system consisting of a mobile app
 The project is divided into three main components:
 
 ### 1. Mobile Application (`absensi_dosen_app/`)
-
 - Built with Flutter
 - Handles lecturer login and attendance marking
 - Cross-platform support (Android, iOS)
 
-### 2. Admin Panel (`absensi-dosen-admin/`)
-
+### 2. Admin Panel (`absensi_dosen_admin/`)
 - Built with Laravel
 - Manages lecturers, schedules, and attendance records
 - Provides administrative dashboard and reports
 
-### 3. Backend API (`absensi-dosen-api/`)
-
-- Built with PHP
+### 3. Backend API (`absensi_dosen_api/`)
+- Built with PHP Native
 - Handles attendance data processing using Redis Queue system:
   - Uses Redis for queue management
   - Implements a worker system for processing attendance records
   - Asynchronously processes attendance data to prevent data loss
   - Stores attendance with location data (latitude/longitude)
   - Real-time processing with timestamp tracking
-- Manages email notifications using PHPMailer and SendGrid
 
 ## Features
 
 ### Mobile App Features
-
 - Lecturer authentication
 - Attendance marking
 - Dashboard view
 - Schedule viewing
 
 ### Admin Panel Features
-
 - User management
 - Schedule management
 - Attendance tracking
-- Report generation
-- Dashboard analytics
 
 ### API Features
-
 - Authentication endpoints
 - Attendance processing
 - Email notifications
@@ -58,15 +49,12 @@ The project is divided into three main components:
 - **Mobile App:** Flutter/Dart
 - **Admin Panel:** Laravel/PHP
 - **API:** PHP
-- **Queue System:** Redis
-- **Email Services:** PHPMailer, SendGrid
-- **Database:** MySQL (assumed based on Laravel configuration)
-
+- **Database:** MySQL
+  
 ## Setup Instructions
 
 ### Mobile App Setup
-
-1. Navigate to `absensi dosen app/` directory
+1. Navigate to `absensi_dosen_app/` directory
 2. Install Flutter dependencies:
    ```bash
    flutter pub get
@@ -77,8 +65,7 @@ The project is divided into three main components:
    ```
 
 ### Admin Panel Setup
-
-1. Navigate to `absensi-dosen-admin/` directory
+1. Navigate to `absensi_dosen_admin/` directory
 2. Install PHP dependencies:
    ```bash
    composer install
@@ -98,54 +85,27 @@ The project is divided into three main components:
    ```
 
 ### API Setup
-
-1. Navigate to `absensi-dosen-api/` directory
+1. Navigate to `absensi_dosen_api/` directory
 2. Install PHP dependencies:
    ```bash
    composer install
    ```
-3. Configure your email settings in the appropriate configuration files
-4. Ensure Redis server is installed and running
-5. Start the attendance worker:
+5. Run database migrations:
    ```bash
-   php worker_absensi.php
+   php migrate.php
    ```
+
 
 ## System Requirements
 
 ### Mobile App Development
-
 - Flutter SDK
 - Android Studio / Xcode
-- iOS Simulator / Android Emulator
 
 ### Backend Development
-
 - PHP >= 7.4
 - Composer
 - MySQL
 - Laravel CLI
-- Redis Server
 
-## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-Project Link: [https://github.com/yourusername/absensi_dosen](https://github.com/yourusername/absensi_dosen)
-
-## Acknowledgments
-
-- Flutter framework
-- Laravel framework
-- PHPMailer
-- SendGrid
